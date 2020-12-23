@@ -1,12 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import colors from "../../colors/colors"
+import React from "react";
+import styled from "styled-components";
+import colors from "../../colors/colors";
 
-
-const Button = ({desc}) => {
-return <StyledButton>{desc}</StyledButton>;
-}
-
+const Button = ({ desc, onClick }) => {
+  return <StyledButton onClick={()=>{onClick()}}>{desc}</StyledButton>;
+};
 
 export default Button;
 
@@ -21,6 +19,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-weight: 600;
   margin-top: 20px;
-  &:hover{
-      background-color: ${colors.mainBlue};
-  }`
+  &:hover {
+    background-color: ${colors.mainBlue};
+  }
+`;
